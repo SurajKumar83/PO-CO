@@ -1,0 +1,4 @@
+Input: root[] = [1, 2, 3, 4, 5, N, N]
+
+Output: [1, 2, 4]
+Explanation: From the left side of the tree, only the nodes 1, 2, and 4 are visible.
