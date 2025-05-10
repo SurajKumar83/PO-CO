@@ -1,0 +1,14 @@
+long long temp=sum2+zero2;
+                  if((temp-sum1)>=zero1){
+                      return temp;
+                  }else if(zero2){
+                      return sum1+zero1;
+                  }
+             }
+             else if(zero1<=zero2 && zero1){
+                 return sum2+zero2;
+             }
+        }
+        return -1;
+    }
+};
