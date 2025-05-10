@@ -1,0 +1,24 @@
+def longestSubarray(self, arr, k):
+        # Code Here
+        import itertools
+        arr = [1 if e > k else -1 for e in arr]
+        s = list(itertools.accumulate(arr))
+        stack = []
+        ans = 0
+        for i, e in enumerate(s):
+            if e > 0:
+                ans = max(ans, i+1)
+    
+            if not stack or e < s[stack[-1]]:
+                stack.append(i)
+            else:
+                lo, hi = 0, len(stack)
+                while lo < hi:
+                    mi = lo+(hi-lo)//2
+                    if s[stack[mi]] < e:
+                        hi = mi
+                    else:
+                        lo = mi+1
+                if lo < len(stack):
+                    ans = max(ans, i-stack[lo])
+        return ans
